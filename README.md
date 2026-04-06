@@ -21,7 +21,7 @@ Conecte a BitDogLab ao computador via USB, selecione a porta correta no compilad
 ## Pinos usados: 
 Foram utilizados os seguintes componentes e conexões:
 
-Joystick: Eixo vertical → GP26/Eixo horizontal → GP27    
+Joystick: Eixo vertical → GP26 | Eixo horizontal → GP27    
 Matriz de LEDs: Conectada ao pino GP7           
 Buzzer: Conectada ao GP21                       
 Botões: Botão A → GP5 | Botão B → GP6 | Botão C → GP10    
