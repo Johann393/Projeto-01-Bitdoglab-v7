@@ -27,6 +27,8 @@ Buzzer: Conectada ao GP21
 Botões: Botão A → GP5 | Botão B → GP6 | Botão C → GP10    
 Display OLED SSD1306 (I2C): SDA → GP2 | SCL → GP3
 
+## Link repositório oficial bitdoglab: https://github.com/BitDogLab/BitDogLab
+
 
 
 
