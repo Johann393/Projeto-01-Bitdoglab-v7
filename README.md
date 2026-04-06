@@ -16,7 +16,7 @@ Figura 1: Bitdoglab usada para o projeto
 ## Como usar? 
 Para executar o projeto, basta rodar o script jogo_guitarhero.py em um ambiente de desenvolvimento compatível com MicroPython, como o Thonny.
 
-Conecte a BitDogLab ao computador via USB, selecione a porta correta no compilador e execute o código. Certifique-se de que a biblioteca do display SSD1306 esteja previamente instalada na placa.
+Conecte a BitDogLab ao computador via USB, selecione a porta correta no compilador e execute o código. Certifique-se de que a biblioteca do display SSD1306 esteja previamente instalada na placa. Caso o arquivo não esteja presente, basta adicionar o arquivo ssd1306.py na BitDogLab. Esse arquivo pode ser encontrado neste repositório.
 
 ## Pinos usados: 
 Foram utilizados os seguintes componentes e conexões:
