@@ -54,6 +54,11 @@ last_note_time = time.ticks_ms()
 
 def play_music():
     global note_index, last_note_time
+
+    # proteção contra overflow
+    if note_index >= len(current_melody):
+        note_index = 0
+
     note, duration = current_melody[note_index]
 
     if time.ticks_diff(time.ticks_ms(), last_note_time) >= duration:
@@ -170,6 +175,7 @@ while True:
 
     if state == MENU:
         current_melody = melody_menu
+        note_index = 0   # <-- FIX
         show_menu(menu_option)
 
         move = read_joystick_y()
@@ -191,6 +197,7 @@ while True:
                 last_move = time.ticks_ms()
 
                 current_melody = melody_hard if difficulty else melody_normal
+                note_index = 0   # <-- FIX
 
             elif menu_option == 1:
                 difficulty = 1 - difficulty
@@ -220,6 +227,7 @@ while True:
 
             if not hit:
                 state = GAME_OVER
+                continue  # <-- FIX
 
         if time.ticks_diff(time.ticks_ms(), last_move) > fall_speed[difficulty]:
 
@@ -229,8 +237,11 @@ while True:
             for n in notes:
                 if n["y"] > 4:
                     state = GAME_OVER
+                    break  # <-- FIX
 
-            # HARD 
+            if state == GAME_OVER:
+                continue  # <-- FIX
+
             if difficulty == 1:
                 if len(notes) < 2 and random.random() < 0.25:
                     spawn_note(notes)
@@ -248,6 +259,7 @@ while True:
             high_score = score
 
         current_melody = melody_menu
+        note_index = 0   # <-- FIX
         show_score()
         time.sleep(2)
         state = MENU
